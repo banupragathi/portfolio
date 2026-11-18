@@ -1,0 +1,8 @@
+Place your profile photo here.
+
+Recommended:
+- Filename: your-photo.png
+- Size: minimum 400x400px, square crop
+- Format: PNG with transparent background (preferred) or clean solid background
+- In index.html, replace <div class="avatar-inner">BP</div>
+  with: <img src="assets/your-photo.png" alt="Banu Pragathi" />

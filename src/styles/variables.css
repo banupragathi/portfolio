@@ -1,0 +1,18 @@
+/* ============================================================
+   VARIABLES — Design Tokens
+   ============================================================ */
+
+:root {
+  --night: #050816;
+  --navy: #0B1026;
+  --deep-blue: #111827;
+  --pink: #FF5EA8;
+  --purple: #8B5CF6;
+  --purple-light: #a78bfa;
+  --sky-blue: #38BDF8;
+  --orange: #FF9F43;
+  --yellow: #FFD166;
+  --font-display: 'Sora', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}

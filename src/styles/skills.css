@@ -1,0 +1,168 @@
+/* ============================================================
+   SKILLS — Constellation Islands
+   ============================================================ */
+
+.islands-header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 120px 80px 40px 80px;
+  text-align: left;
+}
+
+#constellation-islands {
+  position: relative;
+  width: 100%;
+  height: 500vh;
+  background: transparent !important;
+  overflow: visible;
+}
+
+.islands-viewport {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#islands-canvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.island-slide {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.25,0.46,0.45,0.94),
+              transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94);
+  pointer-events: none;
+}
+
+.island-slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: none;
+}
+
+.island-slide.active .island-skills-card {
+  pointer-events: auto;
+}
+
+.island-info-panel {
+  width: 40%;
+  max-width: 460px;
+  padding: 0 32px 0 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.island-counter-inline {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 18px;
+}
+
+.island-num {
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  background: linear-gradient(135deg, var(--pink), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.island-of {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.2);
+  margin-left: 4px;
+}
+
+.island-title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.2vw, 40px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 14px;
+  text-shadow: 0 0 50px rgba(139,92,246,0.35);
+}
+
+.island-tagline {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.50);
+  line-height: 1.7;
+  padding-left: 16px;
+  border-left: 2px solid var(--pink);
+  margin-bottom: 28px;
+  max-width: 300px;
+}
+
+.island-skills-card {
+  background: rgba(12,8,30,0.50);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 20px;
+  padding: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.04),
+    inset 0 0 20px rgba(139,92,246,0.03);
+}
+
+.island-pill {
+  padding: 8px 18px;
+  border-radius: 24px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  color: rgba(255,255,255,0.82);
+  background: rgba(139,92,246,0.10);
+  border: 1px solid rgba(139,92,246,0.22);
+  letter-spacing: 0.3px;
+  cursor: default;
+  transition: all 0.35s ease;
+  box-shadow: 0 0 10px rgba(139,92,246,0.06);
+}
+
+.island-pill:hover {
+  background: rgba(139,92,246,0.22);
+  border-color: rgba(139,92,246,0.50);
+  box-shadow: 0 0 18px rgba(139,92,246,0.25);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .island-info-panel { width: 55%; padding: 0 24px 0 40px; }
+  .island-num { font-size: 48px; }
+  .island-title { font-size: clamp(22px, 3vw, 32px); }
+  .islands-header-container { padding: 80px 40px 20px 40px; }
+}
+
+@media (max-width: 600px) {
+  .island-info-panel { width: 70%; padding: 0 16px 0 28px; }
+  .island-num { font-size: 36px; }
+  .island-title { font-size: 22px; }
+  .island-tagline { font-size: 13px; }
+  .island-pill { padding: 6px 14px; font-size: 11px; }
+  .islands-header-container { padding: 60px 28px 10px 28px; }
+}

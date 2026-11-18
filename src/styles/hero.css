@@ -1,0 +1,93 @@
+/* ============================================================
+   HERO
+   ============================================================ */
+
+#hero {
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: transparent;
+  overflow: visible;
+  position: relative;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1.4s ease both;
+}
+
+.hero-hello {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(90px, 16vw, 160px);
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 1;
+  background: linear-gradient(135deg,
+    #00c6ff, #9d00ff, #ff007f, #ff6a00, #ffd200,
+    #ffffff, #ffd200, #ff6a00, #ff007f, #9d00ff, #00c6ff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 auto 12px;
+  filter: drop-shadow(0 0 25px rgba(139,92,246,0.45));
+  animation: color-flow 10s ease-in-out infinite, float-dreamy 5s ease-in-out infinite;
+  display: block;
+  will-change: transform;
+}
+
+.hero-name {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(22px, 4.5vw, 34px);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(135deg,
+    #00c6ff, #9d00ff, #ff007f, #ff6a00, #ffd200,
+    #ffffff, #ffd200, #ff6a00, #ff007f, #9d00ff, #00c6ff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 auto 22px;
+  animation: color-flow 10s ease-in-out infinite reverse;
+  filter: drop-shadow(0 0 12px rgba(139,92,246,0.25));
+  display: block;
+  will-change: transform;
+}
+
+.hero-tagline {
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.45);
+  max-width: 440px;
+  margin: 0 auto 40px;
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+}
+
+.hero-scroll-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,0.28);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 44px;
+  background: linear-gradient(to bottom, rgba(255,94,168,0.7), transparent);
+  animation: scrollLine 2.2s ease infinite;
+}
+
+@media (max-width: 600px) {
+  .hero-hello { letter-spacing: -3px; }
+}

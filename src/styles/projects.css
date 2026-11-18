@@ -1,0 +1,259 @@
+/* ============================================================
+   PROJECTS — Golden Hour Stack
+   ============================================================ */
+
+#projects {
+  position: relative;
+  width: 100%;
+  background: transparent;
+}
+
+.projects-header-new {
+  margin-bottom: 60px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projects-stack {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 850px;
+  padding: 40px 0;
+  perspective: 1500px;
+}
+
+.project-landscape-card {
+  position: absolute;
+  top: max(40px, calc(45vh - 190px));
+  left: 0; right: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  width: min(80vw, 1100px);
+  height: 380px;
+  background: rgba(15,10,35,0.55);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 28px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255,209,102,0.35);
+  box-shadow:
+    0 -2px 30px rgba(255,209,102,0.12),
+    0 30px 100px rgba(0,0,0,0.5),
+    0 10px 40px rgba(139,92,246,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.1);
+  overflow: hidden;
+  transform-origin: top center;
+  will-change: transform, opacity;
+  transition: box-shadow 0.5s ease, border-color 0.5s ease;
+  z-index: 1;
+}
+
+.project-landscape-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 5%; right: 5%;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(255,209,102,0.5) 20%,
+    rgba(255,209,102,0.8) 50%,
+    rgba(255,209,102,0.5) 80%,
+    transparent);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.project-landscape-card::after {
+  content: '';
+  position: absolute;
+  top: -60px; left: -60px; right: -60px; bottom: -60px;
+  background: radial-gradient(ellipse at 50% 30%,
+    rgba(139,92,246,0.12) 0%,
+    rgba(255,94,168,0.06) 40%,
+    transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 40px;
+}
+
+.project-landscape-card:hover {
+  box-shadow:
+    0 -2px 40px rgba(255,209,102,0.18),
+    0 35px 110px rgba(0,0,0,0.55),
+    0 10px 60px rgba(139,92,246,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.14);
+  border-top-color: rgba(255,209,102,0.5);
+}
+
+.project-landscape-card:last-child { margin-bottom: 20px; }
+
+#card-satquery     { z-index: 6; }
+#card-netra        { z-index: 5; }
+#card-ninaivu      { z-index: 4; }
+#card-gramseva     { z-index: 3; }
+#card-ecolearn     { z-index: 2; }
+#card-disastermesh { z-index: 1; }
+
+.card-left {
+  width: 55%;
+  padding: 24px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.card-left::-webkit-scrollbar { display: none; }
+
+.card-right {
+  width: 45%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 60% 40%, rgba(139,92,246,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 40% 70%, rgba(255,94,168,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(56,189,248,0.06) 0%, transparent 50%);
+}
+
+.proj-category {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--pink);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(255,94,168,0.1);
+  border: 1px solid rgba(255,94,168,0.2);
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.proj-category::before { content: '✦'; font-size: 8px; }
+
+.proj-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 3vw, 4rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 10px;
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  display: block;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+
+.proj-desc {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.5;
+  margin-bottom: 12px;
+  max-width: 85%;
+}
+
+.proj-quote {
+  font-style: italic;
+  font-size: 13px;
+  color: rgba(255,255,255,0.8);
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.03);
+  border-left: 2px solid var(--pink);
+  border-radius: 4px 12px 12px 4px;
+  margin-bottom: 12px;
+  max-width: 95%;
+}
+
+.proj-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.proj-tech span {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.proj-tech span:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.3);
+  color: #fff;
+}
+
+.btn-proj-action {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 20px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  align-self: flex-start;
+  backdrop-filter: blur(8px);
+}
+
+.btn-proj-action:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.5);
+  box-shadow: 0 0 20px rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+
+.proj-visual-scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .project-landscape-card {
+    flex-direction: column;
+    height: auto;
+    min-height: auto;
+    max-height: none;
+  }
+  .card-left {
+    width: 100%;
+    padding: 30px 28px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    overflow-y: visible;
+  }
+  .card-right { width: 100%; height: 300px; padding-bottom: 20px; }
+  .proj-title { font-size: 28px; }
+}
+
+@media (max-width: 600px) {
+  #projects { padding-left: 28px; padding-right: 28px; }
+}
