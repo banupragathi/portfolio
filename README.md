@@ -47,7 +47,7 @@ class BanuPragathi:
 </td>
 <td valign="middle" width="45%" align="center">
 
-<img src="https://raw.githubusercontent.com/banupragathi/portfolio/main/public/assets/banu_avatar.gif" width="360px" alt="Banu Pragathi" style="border-radius: 20px;"/>
+<img src="https://raw.githubusercontent.com/banupragathi/portfolio/main/public/assets/banu-pragathi-avatar.gif" width="340px" alt="Banu Pragathi" style="border-radius: 20px;"/>
 
 </td>
 </tr>
