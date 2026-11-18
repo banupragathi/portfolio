@@ -219,7 +219,7 @@ export default function SatqueryVisual() {
     // Load actual textures
     const earthImg = new Image();
     earthImg.crossOrigin = 'anonymous';
-    earthImg.src = '/earth_day.jpg';
+    earthImg.src = `${import.meta.env.BASE_URL}earth_day.jpg`;
     earthImg.onload = () => {
       gl.bindTexture(gl.TEXTURE_2D, earthTex);
       gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, earthImg);
@@ -231,7 +231,7 @@ export default function SatqueryVisual() {
 
     const cloudsImg = new Image();
     cloudsImg.crossOrigin = 'anonymous';
-    cloudsImg.src = '/earth_clouds.png';
+    cloudsImg.src = `${import.meta.env.BASE_URL}earth_clouds.png`;
     cloudsImg.onload = () => {
       gl.bindTexture(gl.TEXTURE_2D, cloudsTex);
       gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, cloudsImg);

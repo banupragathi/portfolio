@@ -46,7 +46,7 @@ export default function Contact() {
               </div>
 
               <div className="phone-screen-content">
-                <img src="/assets/linkedin-profile.png" alt="LinkedIn Profile" className="phone-image-content" />
+                <img src={`${import.meta.env.BASE_URL}assets/linkedin-profile.png`} alt="LinkedIn Profile" className="phone-image-content" />
               </div>
             </div>
           </div>
@@ -57,7 +57,7 @@ export default function Contact() {
         </p>
         
         <div className="connect-btns">
-          <a className="cbtn cbtn-resume" href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+          <a className="cbtn cbtn-resume" href={`${import.meta.env.BASE_URL}resume.pdf`} target="_blank" rel="noopener noreferrer">Resume</a>
           <a className="cbtn cbtn-li" href="https://www.linkedin.com/in/banu-pragathi/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a className="cbtn cbtn-gh" href="https://github.com/banupragathi" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a className="cbtn cbtn-email" href="https://mail.google.com/mail/?view=cm&fs=1&to=banupragathi@gmail.com" target="_blank" rel="noopener noreferrer">Send Email</a>

@@ -34,7 +34,7 @@ export default function About() {
       <div className="about-grid">
         <div className="about-avatar" ref={avatarRef}>
           <div className="avatar-frame">
-            <img src="/assets/portrait.png" alt="Banu Pragathi" className="portrait-img" />
+            <img src={`${import.meta.env.BASE_URL}assets/portrait.png`} alt="Banu Pragathi" className="portrait-img" />
           </div>
           <div className="avatar-glow" />
         </div>

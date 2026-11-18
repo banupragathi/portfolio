@@ -22,17 +22,22 @@ export default function Achievements() {
       </div>
       <div className="gallery-3d-container" ref={containerRef}>
         <div className="gallery-3d-track" ref={trackRef}>
-          {achievements.map((item) => (
-            <div className="gallery-3d-card" key={item.id}>
-              <div className="card-top-label">{item.label}</div>
-              <div className="card-title">{item.title}</div>
-              <div className="card-desc">{item.desc}</div>
-              <div 
-                className="card-image-placeholder"
-                style={{ backgroundImage: `url(${item.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-              />
-            </div>
-          ))}
+          {achievements.map((item) => {
+            const bgImage = item.image.startsWith('http') || item.image.startsWith(import.meta.env.BASE_URL)
+              ? item.image
+              : `${import.meta.env.BASE_URL}${item.image.replace(/^\//, '')}`;
+            return (
+              <div className="gallery-3d-card" key={item.id}>
+                <div className="card-top-label">{item.label}</div>
+                <div className="card-title">{item.title}</div>
+                <div className="card-desc">{item.desc}</div>
+                <div 
+                  className="card-image-placeholder"
+                  style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
